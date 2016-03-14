@@ -24,6 +24,7 @@ extern "C"
     void UpdateTotal(void * containingView);
     void AddHalfFrame(void * containingView);
     void RemoveHalfFrame(void * containingView);
+    void EditingWillBegin(void * textField);
     
     
 #ifdef __cplusplus

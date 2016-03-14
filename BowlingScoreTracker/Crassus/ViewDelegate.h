@@ -158,6 +158,7 @@ typedef void(*DoubleTextObjectAction)(const char *, const char *, void*);
 typedef void*(*DoubleTextObjectFunction)(const char *, const char *);
 typedef enum Bools(*DoubleTextConditionalFunction)(const char *, const char *);
 typedef const char *(*ObjectTextFunction)(void *);
+    typedef void *(*WholeNumberObjectFunction)(unsigned int);
 
 void AddSubview(void* view, void* subview, DoubleObjectAction action);
 
@@ -440,6 +441,10 @@ unsigned int CrassusGetTag(void* view);
 void SetTag(void* view, unsigned int tag, ObjectWholeNumberAction action);
 
 void CrassusSetTag(void* view, unsigned int tag);
+    
+    void * GetViewFromTag(unsigned int tag, WholeNumberObjectFunction function);
+    
+    void * CrassusGetViewFromTag(unsigned int tag);
 
 #ifdef __cplusplus
 }

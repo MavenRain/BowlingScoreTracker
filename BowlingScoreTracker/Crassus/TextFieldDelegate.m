@@ -63,6 +63,11 @@ const char * CrassusGetTextFieldText(void* textField)
     return [((__bridge UITextField *)textField).text cStringUsingEncoding:NSUTF8StringEncoding];
 }
 
+void CrassusSelectAllText(void * textField)
+{
+    [(__bridge UITextField *)textField performSelector:@selector(selectAll:) withObject:(__bridge UITextField *)textField afterDelay:0.f];
+}
+
 
 
 

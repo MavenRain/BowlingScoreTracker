@@ -22,14 +22,15 @@ typedef struct Rgb Rgb;
 typedef enum TextFieldViewMode TextFieldViewMode;
 typedef enum Bools Bools;
 typedef void*(*ViewCreator)(Frame);
-typedef void(*DoubleObjectAction)(void*, void*);
-typedef void(*ViewShortColorAction)(void*, Rgb);
-typedef void(*ObjectDecimalAction)(void*, float);
-typedef void(*ViewModeAction)(void*, TextFieldViewMode);
-typedef void(*ObjectTextAction)(void*, const char *);
-typedef void(*ObjectToggler)(void*, Bools);
+typedef void(*DoubleObjectAction)(void *, void *);
+typedef void(*ViewShortColorAction)(void *, Rgb);
+typedef void(*ObjectDecimalAction)(void *, float);
+typedef void(*ViewModeAction)(void *, TextFieldViewMode);
+typedef void(*ObjectTextAction)(void *, const char *);
+typedef void(*ObjectToggler)(void *, Bools);
 typedef const char *(*ObjectTextFunction)(void *);
-
+    typedef void(*SingleObjectAction)(void *);
+    typedef void*(*WholeNumberObjectFunction)(unsigned int);
 
 
 void* CreateTextField(Frame frame, ViewCreator function);
@@ -71,7 +72,10 @@ void CrassusSetSecureEntry(void* textField, Bools secure);
 const char * GetTextFieldText(void* textField, ObjectTextFunction function);
 
 const char * CrassusGetTextFieldText(void* textField);
-
+    
+    void SelectAllText(void * textField, SingleObjectAction action);
+    
+    void CrassusSelectAllText(void * textField);
 
 #ifdef __cplusplus
 }

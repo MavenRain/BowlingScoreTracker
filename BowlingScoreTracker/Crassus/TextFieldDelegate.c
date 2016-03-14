@@ -54,7 +54,38 @@ void SetSecureEntry(void* textField, Bools secure, ObjectToggler action)
     (*action)(textField, secure);
 }
 
-const char * GetTextFieldText(void* textField, ObjectTextFunction function)
+const char * GetTextFieldText(void * textField, ObjectTextFunction function)
 {
     return (*function)(textField);
 }
+
+void SelectAllText(void * textField, SingleObjectAction action)
+{
+    (*action)(textField);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

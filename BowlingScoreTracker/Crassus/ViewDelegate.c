@@ -354,6 +354,11 @@ void SetTag(void* view, unsigned int tag, ObjectWholeNumberAction action)
     (*action)(view, tag);
 }
 
+void * GetViewFromTag(unsigned int tag, WholeNumberObjectFunction function)
+{
+    return (*function)(tag);
+}
+
 
 
 

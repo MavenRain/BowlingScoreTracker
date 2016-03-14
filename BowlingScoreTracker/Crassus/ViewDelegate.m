@@ -601,6 +601,11 @@ void CrassusSetTag(void* view, unsigned int tag)
     ((__bridge UIView *)view).tag = tag;
 }
 
+void * CrassusGetViewFromTag(unsigned int tag)
+{
+    return (__bridge void *)[(UIView *)[([UIApplication sharedApplication].delegate).window.subviews objectAtIndex:0] viewWithTag:tag];
+}
+
 
 
 
